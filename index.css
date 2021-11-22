@@ -24,7 +24,10 @@ textarea,input{
 	border-radius: 6px;
 	width: 90%;
 	padding: 10px 5px;
-	background: #F8F9FA; 
+	background: #e5e5e5; 
+
+
+
 }
 textarea:focus,input:focus{
 	border: 1px solid #0B7AFF;
@@ -89,5 +92,10 @@ span{
 	width: 80px;
 	margin-right: auto;
 	color: gray;
+
+}
+.blog-container h1,p{
+	word-wrap: break-word
+
 
 }

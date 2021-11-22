@@ -1,20 +1,13 @@
 
-let storeArray = [ ]
+let storeArray = []
 
 let blogEl = document.getElementById('blog-list')
 let sendForm = document.getElementById('new-post')
-renderBlogs()
 
 
-function renderBlogs(){
 
-
-	fetch('https://apis.scrimba.com/jsonplaceholder/posts')
-	.then(response => response.json())
-	.then(data => {
-	storeArray = data.slice(0,5)
-		console.log(storeArray)
-	let html = ``
+function renderArray(){
+	let html = "";
 
 			for(let post of storeArray){
 
@@ -30,11 +23,23 @@ function renderBlogs(){
 
 			`
 			blogEl.innerHTML = html
-		}
+}}
+
+
+
+
+	fetch('https://apis.scrimba.com/jsonplaceholder/posts')
+	.then(response => response.json())
+	.then(data => {
+	storeArray = data.slice(0,5)
+		console.log(storeArray)
+
+		renderArray()
 	
-	})
+			
+		})
 	
-}
+
 
 sendForm.addEventListener('submit' , function(e){
 	e.preventDefault()
@@ -64,7 +69,9 @@ function getNewBlog(){
 	.then(response => response.json())
 	.then(data=>{
 		storeArray.unshift(data)
-		renderBlogs()
+		renderArray()
+
+		
 	})
 }
 
