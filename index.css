@@ -83,3 +83,9 @@ nav{
 
 
 }
+
+span{
+	width: 80px;
+	margin-right: auto;
+	color: gray;
+}
